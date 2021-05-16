@@ -1,18 +1,18 @@
-
+<?php
+include 'global/config.php';
+include 'global/conexion.php';
+?>
 
 <!DOCTYPE html>
 
 <html lang="es">
 <head>
-	<title>La Cantina de Chalmun</title>
+	<title>Bathtime</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="CSS/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="CSS/estilos.css">
-<link rel="icon" type="image/png" href="IMAGES/icono.png" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
-<body background="IMAGES/fondo.jpg">
+<body>
   <h1>La Cantina de Chalmun</h1>
   <div>
 
