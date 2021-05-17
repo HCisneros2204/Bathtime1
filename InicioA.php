@@ -1,0 +1,1 @@
+echo"<script>alert('Bienvenido Administrador')</script>";

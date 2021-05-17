@@ -29,9 +29,9 @@ include 'global/conexion.php';
     </div>
 
     <!-- Login Form -->
-    <form>
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="username">
-      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+    <form action="global/login.php" method="POST" name="login" id="login">
+      <input type="text" id="username" class="fadeIn second" name="username" placeholder="username">
+      <input type="password" id="Pass" class="fadeIn third" name="Pass" placeholder="password">
       <input type="submit" class="fadeIn fourth" value="Log In">
     </form>
 
@@ -39,6 +39,5 @@ include 'global/conexion.php';
 
   </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
   </body>
 </html> 
