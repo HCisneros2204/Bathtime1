@@ -20,7 +20,7 @@ session_start();
 			}else{
 				$_SESSION['Id_Rol']=$f['Id_User'];
 				$_SESSION['TypeRol']=$f['TypeRol'];
-				header("Location: InicioU.php");	
+				header("Location: ../InicioU.php");	
 			}
 		}else{
 			echo '<script>alert("CONTRASEÑA INCORRECTA")</script> ';
@@ -31,7 +31,7 @@ session_start();
 		
 		echo '<script>alert("ESTE USUARIO NO EXISTE, PORFAVOR REGISTRESE PARA PODER INGRESAR")</script> ';
 		
-		header("Bathtime/index.php");	
+		header("../index.php");	
 
 	}
 

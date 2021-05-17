@@ -2,7 +2,7 @@
 /* BASIC */
 
 html {
-	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background: linear-gradient(-45deg, #cccccc, #f6f6f6, #E19EFF, #EAE7CA );
 	background-size: 700% 700%;
 	animation: gradient 15s ease infinite;
   }
