@@ -57,6 +57,10 @@ include 'global/conexion.php';
           <td>
           <form method="POST" action="ActualizarCl.php">
           <input type="hidden" name="idU" id="idU" value='.$usuario['Id_Cliente'].'></input>
+          <input type="hidden" name="Nombre" id="Nombre" value='.$usuario['NombreCliente'].'></input>
+          <input type="hidden" name="Telefono" id="Telefono" value='.$usuario['Telefono'].'></input>
+          <input type="hidden" name="Correo" id="Correo" value='.$usuario['Correo'].'></input>
+          <input type="hidden" name="Direccion" id="idU" value='.$usuario['Direccion'].'></input>
           <button class="btn btn-secondary" type="submit" style="background-color:#CBAD14 ;"
           name="btnAccion" value="ActualizarUser" >modificar</button></form></td>
           
