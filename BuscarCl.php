@@ -3,6 +3,12 @@ include 'templates/header.php';
 include 'global/config.php';
 include 'global/conexion.php';
 ?>
+<?php
+	session_start();
+	if (@!$_SESSION['TypeRol']) {
+		header("Location:index.php");
+  }
+  ?>
 
  <!-- Page Content  -->
  <div id="content" class="p-4 p-md-5 pt-5">
@@ -57,7 +63,7 @@ include 'global/conexion.php';
           </td>
           
           <td>
-          <form method="POST" action="">
+          <form method="POST" action="ActualizarCl.php">
           <input type="hidden" name="idU" id="idU" value='.$usuario['Id_Cliente'].'></input>
           <button class="btn btn-secondary" type="submit" style="background-color:#CBAD14 ;"
           name="btnAccion" value="ActualizarUser" >modificar</button></form></td>

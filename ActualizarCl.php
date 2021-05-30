@@ -1,6 +1,12 @@
 <?php
 include 'templates/header.php';
 ?>
+<?php
+	session_start();
+	if (@!$_SESSION['TypeRol']) {
+		header("Location:index.php");
+  }
+  ?>
 
 
 <?php

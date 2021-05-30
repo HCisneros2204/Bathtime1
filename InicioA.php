@@ -1,12 +1,20 @@
 <?php
-include 'templates/header.php'
+include 'templates/header.php';
+include 'global/config.php';
+include 'global/conexion.php';
 
 ?>
+<?php
+	session_start();
+	if (@!$_SESSION['TypeRol']) {
+		header("Location:index.php");
+  }
+  ?>
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5 pt-5">
         <h2 class="mb-4">Bienvenido </h2>
         <div style="padding: 10px;">
-        <button type="button" class="btn btn-primary btn-lg" style="background-color: #2ED8A0;" ><span class="fa fa-shower mr-3"></span> Añadir nuevo Servicio de autolavado</button>
+        <a href="DetalleServicio.php" ><button type="button" class="btn btn-primary btn-lg" style="background-color: #2ED8A0;" ><span class="fa fa-shower mr-3"></span> Añadir nuevo Servicio de autolavado</button></a>
         <button type="button" class="btn btn-primary btn-lg " style="background-color: #07978B;"><span class="fa fa-table mr-3"></span>Gestion de tabla de espera</button>
         <a href="GClientes.php" ><button type="button" class="btn btn-primary btn-lg " style="background-color: #EED03A ;"><span class="fa fa-user-circle mr-3"></span>Nuevo Cliente?</button></a>
         </div>

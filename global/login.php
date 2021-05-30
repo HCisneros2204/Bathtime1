@@ -25,13 +25,13 @@ session_start();
 		}else{
 			echo '<script>alert("CONTRASEÑA INCORRECTA")</script> ';
 		
-			header("htdocs/Bathtime/index.php");
+			header("Location: ../index.php");
 		}
 	}else{
 		
 		echo '<script>alert("ESTE USUARIO NO EXISTE, PORFAVOR REGISTRESE PARA PODER INGRESAR")</script> ';
 		
-		header("../index.php");	
+		header("Location: ../index.php");	
 
 	}
 

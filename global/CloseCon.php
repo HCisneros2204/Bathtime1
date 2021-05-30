@@ -1,10 +1,10 @@
 <?php 
 session_start();
-if($_SESSION['Username']){	
+if($_SESSION['TypeRol']){	
 	session_destroy();
-	header("location:index.php");
+	header("location:../index.php");
 }
 else{
-	header("location:index.php");
+
 }
 ?>

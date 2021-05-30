@@ -1,6 +1,12 @@
 <?php
 include 'templates/header.php';
 ?>
+<?php
+	session_start();
+	if (@!$_SESSION['TypeRol']) {
+		header("Location:index.php");
+  }
+  ?>
 
 <div id="content" class="p-4 p-md-5 pt-5">
 
@@ -18,8 +24,8 @@ include 'templates/header.php';
                 </div>
                 <br>
                     <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Nombre<span class="text-danger"> *</span></label> <input type="text" id="Nombre" name="Nombre" placeholder="Enter your first name" required> </div>
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Telefono<span class="text-danger"> *</span></label> <input type="text" id="Telefono" name="Telefono" placeholder="Enter your last name" required"> </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Nombre<span class="text-danger"> *</span></label> <input type="text" id="Nombre" name="Nombre" placeholder="" required> </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Telefono<span class="text-danger"> *</span></label> <input type="text" id="Telefono" name="Telefono" placeholder="" required"> </div>
                     </div>
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-12 flex-column d-flex"> <label class="form-control-label px-3">Correo<span class="text-danger"> *</span></label> <input type="text" id="email" name="email" placeholder=""> </div>
