@@ -35,7 +35,7 @@
 	              <a href="../bathtime/GClientes.php" style="text-decoration:none;"><span class="fa fa-user mr-3"></span> Gestion de clientes</a>
 	          </li>
 	          <li>
-              <a href="#" style="text-decoration:none;"><span class="fa fa-sticky-note mr-3"></span> Reportes</a>
+              <a href="../bathtime/Reportes.php" style="text-decoration:none;"><span class="fa fa-sticky-note mr-3"></span> Reportes</a>
 	          </li>
 	          <li>
               <a href="#" style="text-decoration:none;"><span class="fa fa-cogs mr-3"></span> Gestion de Servicios</a>
