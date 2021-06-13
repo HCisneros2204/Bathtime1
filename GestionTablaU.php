@@ -7,18 +7,14 @@ include 'global/conexion.php';
 <?php
 	session_start();
 	if (@!$_SESSION['TypeRol']) {
-		
 		header("Location:index.php");
   }
   ?>
-
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5 pt-5">
         <h2 class="mb-4">Bienvenido </h2>
         <div style="padding: 10px;">
-        <a href="DetallesServicioU.php" ><button type="button" class="btn btn-primary btn-lg" style="background-color: #2ED8A0;" ><span class="fa fa-shower mr-3"></span> Añadir nuevo Servicio de autolavado</button></a>
-        <a href="GestionTablaU.php" ><button type="button" class="btn btn-primary btn-lg " style="background-color: #07978B;"><span class="fa fa-table mr-3"></span>Gestion de tabla de espera</button>
-        <a href="GClientesU.php" ><button type="button" class="btn btn-primary btn-lg " style="background-color: #EED03A ;"><span class="fa fa-user-circle mr-3"></span>Nuevo Cliente?</button></a>
+        <a href="InicioU.php" ><button type="button" class="btn btn-primary btn-lg " style="background-color: #07978B;"><span class="fa fa-home mr-3"></span>Inicio</button>
         </div>
         <table class="table table-sm table-dark">
   <thead>
@@ -49,12 +45,15 @@ include 'global/conexion.php';
           <td><?php echo($usuario['Matricula'])?></td>
           <td><?php echo($usuario['Marca'])?></td>
           <td><?php echo($usuario['Total'])?></td>
-          <td><form method="POST" action="global/EliminarCliente.php">
-          <input type="hidden" name="id" id="id" value="<?php echo($usuario['Id_Cliente'])?>"></input>
-          <button class="btn btn-secondary" type="submit" name="eliminar" value="Eliminar" >
-          <i class="fa fa-print" aria-hidden="true"></i>Imprimir ticket</button>
-          </form></td>
+          <td>
+          <form method="POST" action="global/suspendU.php">
+          <input type="hidden" name="id" id="id" value="<?php echo($usuario['ID'])?>"></input>
+          <button class="btn btn-secondary" type="submit" name="eliminar" value="Eliminar" >Suspender</button>
+          </form>
+          </td>
+          
     <?php }?>
+    
   </tbody>
 </table>
       </div>

@@ -1,37 +1,14 @@
 <?php
-include 'templates/header.php';
+include 'templates/header1.php';
 include 'global/config.php';
 include 'global/conexion.php';
 include 'global/log.php';
-
-$horasdb=array();
-    foreach($_SESSION['Detalles'] as $indice=>$producto){
-
-            array_push($horasdb,$producto['TIEMPO']);
-    }
-
-
-     function sumarHoras($horas) {
-         $total = 0;
-         foreach($horas as $h) {
-             $parts = explode(":", $h);
-             $total += $parts[2] + $parts[1]*60 + $parts[0]*3600;        
-         }   
-         return gmdate("H:i:s", $total);
-     }
-
-     $HorasTotales=sumarHoras($horasdb);
-
-     //////////////////////////////////////
-
-        
-
 ?>
 
 <div id="content" class="p-4 p-md-5 pt-5">
 <h3>Detalles del servicio</h3>
 <?php if(!empty($_SESSION['Detalles'])){?>
-<a href="DetalleServicio.php"><button type="button" class="btn btn-secondary">Gestion de servicios</button></a>
+<a href="DetallesServicioU.php"><button type="button" class="btn btn-secondary">Gestion de servicios</button></a>
 <table class="table table-light">
 
     <tbody>
@@ -82,60 +59,13 @@ $horasdb=array();
         <td width="20%">Total</td>
         <td><?php echo number_format($total,2);?></td>
         </tr>
-        <tr>
-        <td width="10%"><td>Tiempo Total</td>
-        <td><?php echo($HorasTotales) ;?></td></tr>
-        
-        <tr>
-        <td width="10%"><td>Tiempo Inicial</td>
-        <td><?php
-        date_default_timezone_set('America/Mexico_City');
-        $hoy = date("H:i:s");
-        $Timeinit=$hoy;
-        echo($Timeinit);?></td></tr>
-
-        <tr>
-        <td width="10%"><td>Tiempo Final</td>
-        <td><?php
-
-       // Separamos el tiempo en un array para pasarlo a segundos
-        function explode_tiempo($tiempo) {
-            $arr_tiempo = explode(':', $tiempo);
-            $segundos = $arr_tiempo[0] * 3600 + $arr_tiempo[1] * 60 + $arr_tiempo[2];
-            return $segundos;
-        }
-
-        // Transformar los segundos en hora formato HH:mm:ss
-        function segundos_hhmm($seg) {
-            $horas = floor($seg / 3600);
-            $minutos = floor($seg / 60 % 60);
-            $segundos = floor($seg % 60);
-
-            return sprintf('%02d:%02d:%02d', $horas, $minutos, $segundos);
-        }
-
-        $hora1 = $HorasTotales;
-        $hora2 = $Timeinit;
-
-        $h1 = explode_tiempo($hora1);
-        $h2 = explode_tiempo($hora2);
-
-        $total_tiempo_segundos = $h1 + $h2;
-
-        $TiempoFinal=segundos_hhmm($total_tiempo_segundos);
-
-        echo ($TiempoFinal);
-        
-        ?></td></tr>
-
+        <td width="10%"><td>Tiempo Total</td><
+        <td><?php echo $producto['TIEMPO'] ;?></td>
         </tr>
 
     <tr>
-   
-
-
     <td colspan="5">
-            <form action="pago.php" method="POST">
+            <form action="pago1.php" method="POST">
             <div class="alert alert-primary" role="alert">
                 Datos del cliente y su auto
                 <br>

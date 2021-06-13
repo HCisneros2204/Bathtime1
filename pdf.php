@@ -6,6 +6,7 @@ require_once "ReportesLog.php";
 
 
 if(isset($_POST['btnAccion'])){
+    @$id=$_POST['id'];
     
     switch($_POST['btnAccion']){
 
@@ -84,6 +85,36 @@ if(isset($_POST['btnAccion'])){
             $mpdf->WriteHTML($html);
             $mpdf->Output();
             break;
+
+
+
+            case 'ticket':
+                $pdf=new Model();
+                $lista=$pdf->getTicket();
+                var_dump($lista);
+                 $html='<h1>Ticket de servicio<h1>
+                        <table>
+                        <tr>
+                        <td>folio<td><td>Nombre<td>
+                        <td>Modelo</td><td></td>
+                        <td>Matricula</td><td>
+                        </tr><td>Marca</td><td>
+                        </tr><td>Total</td><td>
+                        </tr>';
+                foreach($lista['items'] as $item){
+                    $html.='<tr>
+                            <td>'.$item['folio'].'</td><td></td><td>' .$item['cliente'].'</td><td></td>
+                            <td>'.$item['Modelo'].'</td><td></td><td>' .$item['Matricula'].'</td><td></td>
+                            <td>'.$item['Marca'].'</td><td></td><td>' .$item['Total'].'</td><td></td>
+                            
+                            </tr>';
+                    
+                }
+                $html.='</table>';
+                $mpdf = new \Mpdf\Mpdf();
+                $mpdf->WriteHTML($html);
+                $mpdf->Output();
+                break;
     }
 
 

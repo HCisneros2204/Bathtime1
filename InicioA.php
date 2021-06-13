@@ -47,6 +47,12 @@ include 'global/conexion.php';
           <td><?php echo($usuario['Matricula'])?></td>
           <td><?php echo($usuario['Marca'])?></td>
           <td><?php echo($usuario['Total'])?></td>
+          <td>
+          <form method="POST" action="pdf.php">
+          <input type="hidden" name="idT" id="idT" value="<?php echo($usuario['ID'])?>"></input>
+          <button class="btn btn-secondary" type="submit" name="btnAccion" value="ticket" >
+          <i class="fa fa-print" aria-hidden="true"></i>Imprimir ticket</button>
+          </form></td>
     <?php }?>
   </tbody>
 </table>

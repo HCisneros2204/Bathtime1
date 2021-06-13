@@ -1,7 +1,7 @@
 <?php
 include 'global/config.php';
 include 'global/conexion.php';
-include 'templates/header.php';
+include 'templates/header1.php';
 include 'global/log.php';
 ?>
 
@@ -11,7 +11,7 @@ include 'global/log.php';
 <?php //echo $mensaje ?>
 
 <button class="btn btn-secondary">
-<a class="nav-link" href="DetalleservicioS.php" style="color:aqua;">
+<a class="nav-link" href="DetalleservicioSU.php" style="color:aqua;">
 Mostrar detalle de servicios (<?php 
 echo(empty($_SESSION['Detalles']))?0:count($_SESSION['Detalles']);
 

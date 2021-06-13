@@ -61,6 +61,34 @@ class Model extends Database {
          
     }
 
+    function getTicket(){
+     
+        $ticket=array();
+        $id=$_POST['idT'];
+        $ticket['items']=array();
+        $query=$this->connect()->query("SELECT T.ID, T.Id_Cliente as IDu, C.NombreCliente as cliente,
+        T.Modelo,T.Marca,T.Matricula,T.Total 
+        FROM `tblventas` T 
+        INNER JOIN `cliente` C ON T.Id_Cliente=C.Id_Cliente WHERE T.ID='$id'");
+
+        
+
+
+        while($row = $query->fetch()){
+            array_push($ticket['items'],array( 
+                'folio'=>$row['ID'],
+                'cliente'=>$row['cliente'],
+                'Modelo'=>$row['Modelo'],
+                'Matricula'=>$row['Matricula'],
+                'Marca'=>$row['Marca'],
+                'Total'=>$row['Total']
+                
+            ));
+        }
+        return $ticket;
+         
+    }
+
     
     
 }

@@ -2,7 +2,7 @@
 session_start();
 if($_SESSION['Detalles']){	
 	session_destroy();
-	header("location:../DetalleServicio.php");
+	header("location:../DetallesServicioU.php");
 }
 else{
 

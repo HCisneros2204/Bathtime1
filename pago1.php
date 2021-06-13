@@ -1,5 +1,5 @@
 <?php
-include 'templates/header.php';
+include 'templates/header1.php';
 include 'global/config.php';
 include 'global/conexion.php';
 include 'global/log.php';
@@ -22,9 +22,7 @@ if($_POST){
     foreach($_SESSION['Detalles'] as $indice=>$producto){
 
         $total=$total+($producto['COSTO']);
-        
     }
-    
         $sentencia=$pdo->prepare("INSERT INTO `tblventas` 
         (`ID`, `Id_Cliente`, `Modelo`, `Matricula`, `Marca`, `Total`) 
         VALUES (NULL, :IDCL, :MODELO, :MATRICULA, :MARCA, :TOTAL);");
