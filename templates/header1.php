@@ -26,7 +26,7 @@
 	        </button>
         </div>
         <div class="">
-		  		<h1><a href="../bathtime/InicioA.php" class="logo" style="text-decoration:none;">Bath time <span>Gestor de Administrador</span></a></h1>
+		  		<h1><a href="../bathtime/InicioA.php" class="logo" style="text-decoration:none;">Bath time <span>Gestor de Usuario</span></a></h1>
 	        <ul class="list-unstyled components mb-5">
 	          <li class="active" >
 	            <a href="../bathtime/InicioU.php" style="text-decoration:none;"><span class="fa fa-home mr-3"></span> Home</a>

@@ -16,6 +16,9 @@ if($_POST){
     $Modelo=$_POST['Modelo'];
     $matricula=$_POST['Matricula'];
     $Marca=$_POST['Marca'];
+    $horaT=$_POST['HorasTotales'];
+    $horaini=$_POST['HoraIni'];
+    $horaF=$_POST['HoraFinal'];
 
 
     
@@ -23,9 +26,9 @@ if($_POST){
 
         $total=$total+($producto['COSTO']);
     }
-        $sentencia=$pdo->prepare("INSERT INTO `tblventas` 
-        (`ID`, `Id_Cliente`, `Modelo`, `Matricula`, `Marca`, `Total`) 
-        VALUES (NULL, :IDCL, :MODELO, :MATRICULA, :MARCA, :TOTAL);");
+    $sentencia=$pdo->prepare("INSERT INTO `tblventas` 
+    (`ID`, `Id_Cliente`, `Modelo`, `Matricula`, `Marca`, `Total`,`HorasTotal`,`TiempoInicial`,`TiempoFinal`) 
+    VALUES (NULL, :IDCL, :MODELO, :MATRICULA, :MARCA, :TOTAL,:HORAST,:HORAI,:HORAF);");
 
     $idVenta=$pdo->lastInsertId();
     $sentencia->bindParam(":IDCL",$IDCLiente);
@@ -33,6 +36,10 @@ if($_POST){
     $sentencia->bindParam(":MATRICULA",$matricula);
     $sentencia->bindParam(":MARCA",$Marca);
     $sentencia->bindParam(":TOTAL",$total);
+    $sentencia->bindParam(":HORAST",$horaT);
+    $sentencia->bindParam(":HORAI",$horaini);
+    $sentencia->bindParam(":HORAF",$horaF);
+
     $sentencia->execute();
 
 

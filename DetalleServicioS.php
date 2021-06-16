@@ -22,8 +22,6 @@ $horasdb=array();
 
      $HorasTotales=sumarHoras($horasdb);
 
-     //////////////////////////////////////
-
         
 
 ?>
@@ -162,9 +160,13 @@ $horasdb=array();
             <label for="my-input">Marca</label>
             <input type="text"  name="Marca" id="Marca" class="form-control" placeholder="Marca"></input>
             <br>
-           <h2><label>TOTAL A PAGAR <?php echo "$                     ";?> <?php echo number_format($total,2);?></label>
+           <h2><label>TOTAL A PAGAR <?php echo "$ ";?> <?php echo number_format($total,2);?></label>
 
            <input type="hidden" name="total" id="total" value="<?php echo number_format($total,2);?>">
+           <input type="hidden" name="HorasTotales" id="HorasTotales" value="<?php echo($HorasTotales)?>">
+           <input type="hidden" name="HoraIni" id="HoraIni" value="<?php echo($hoy);?>">
+           <input type="hidden" name="HoraFinal" id="HoraFinal" value="<?php echo ($TiempoFinal);?>">
+
            </h2>
             </div>
             <button value="Proceder" class="btn-btn-primary btn-lg btn-block" type="submit">PAGAR AHORA</button>

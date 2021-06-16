@@ -17,7 +17,9 @@ include 'global/conexion.php';
         <h2 class="mb-4">Gestor de servicios </h2>
 
         <div style="padding: 10px;">
-            <a href="RegistroServicios.php" ><button type="button" class="btn btn-primary btn-lg " style="background-color: #EED03A;"><span class="fa fa-briefcase mr-3"></span>Agregar Nuevo Servicio</button></a>
+            <a href="RegistroServicios.php" >
+            <button type="button" class="btn btn-primary btn-lg " style="background-color: #EED03A;">
+            <span class="fa fa-briefcase mr-3"></span>Agregar Nuevo Servicio</button></a>
                          
 
         </div>
@@ -54,11 +56,11 @@ include 'global/conexion.php';
           </td>
           
           <td>
-          <form method="POST" action="ActualizarCl.php">
-          <input type="hidden" name="idU" id="idU" value="<?php echo($usuario['Id_Servicio'])?>"></input>
+          <form method="POST" action="ActualizarServ.php">
+          <input type="hidden" name="idAS" id="idAS" value="<?php echo($usuario['Id_servicio'])?>"></input>
           <input type="hidden" name="Nombre" id="Nombre" value="<?php echo($usuario['NombreServicio'])?>"></input>
-          <input type="hidden" name="Telefono" id="Telefono" value="<?php echo($usuario['Costo'])?>"></input>
-          <input type="hidden" name="Correo" id="Correo" value="<?php echo($usuario['Tiempo'])?>"></input>
+          <input type="hidden" name="CostoS" id="CostoS" value="<?php echo($usuario['Costo'])?>"></input>
+          <input type="hidden" name="TiempoS" id="TiempoS" value="<?php echo($usuario['Tiempo'])?>"></input>
           <button class="btn btn-secondary" type="submit" style="background-color:#CBAD14 ;"
           name="btnAccion" value="" >modificar</button></form></td>
           

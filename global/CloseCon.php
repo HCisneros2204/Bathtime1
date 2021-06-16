@@ -1,7 +1,7 @@
 <?php 
 session_start();
-if($_SESSION['TypeRol']){	
+if($_SESSION['Detalles']){	
 	session_destroy();
-	header("location:../index.php");
+	header("location:../DetalleServicio.php");
 }
 ?>

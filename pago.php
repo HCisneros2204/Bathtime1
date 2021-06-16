@@ -16,7 +16,15 @@ if($_POST){
     $Modelo=$_POST['Modelo'];
     $matricula=$_POST['Matricula'];
     $Marca=$_POST['Marca'];
+    $horaT=$_POST['HorasTotales'];
+    $horaini=$_POST['HoraIni'];
+    $horaF=$_POST['HoraFinal'];
 
+    echo($horaT);
+    echo("");
+    echo($horaini);
+    echo("");
+    echo($horaF);
 
     
     foreach($_SESSION['Detalles'] as $indice=>$producto){
@@ -26,8 +34,8 @@ if($_POST){
     }
     
         $sentencia=$pdo->prepare("INSERT INTO `tblventas` 
-        (`ID`, `Id_Cliente`, `Modelo`, `Matricula`, `Marca`, `Total`) 
-        VALUES (NULL, :IDCL, :MODELO, :MATRICULA, :MARCA, :TOTAL);");
+        (`ID`, `Id_Cliente`, `Modelo`, `Matricula`, `Marca`, `Total`,`HorasTotal`,`TiempoInicial`,`TiempoFinal`) 
+        VALUES (NULL, :IDCL, :MODELO, :MATRICULA, :MARCA, :TOTAL,:HORAST,:HORAI,:HORAF);");
 
     $idVenta=$pdo->lastInsertId();
     $sentencia->bindParam(":IDCL",$IDCLiente);
@@ -35,6 +43,10 @@ if($_POST){
     $sentencia->bindParam(":MATRICULA",$matricula);
     $sentencia->bindParam(":MARCA",$Marca);
     $sentencia->bindParam(":TOTAL",$total);
+    $sentencia->bindParam(":HORAST",$horaT);
+    $sentencia->bindParam(":HORAI",$horaini);
+    $sentencia->bindParam(":HORAF",$horaF);
+
     $sentencia->execute();
 
 
@@ -75,7 +87,7 @@ if($_POST){
         $sentencia2->execute();
 
     }
-    header("Location:global/CloseCon1.php");
+    header("Location:global/CloseCon.php");
 
     
 }
